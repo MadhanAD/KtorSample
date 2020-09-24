@@ -28,7 +28,7 @@ fun Application.module(testing: Boolean = false) {
 
     routing {
         get("/") {
-            call.respondText("HELLO WORLD!", contentType = ContentType.Text.Plain)
+            call.respondText("HELLO WORLD! from ktor project", contentType = ContentType.Text.Plain)
         }
     }
 }

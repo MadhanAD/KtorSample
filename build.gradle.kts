@@ -5,10 +5,31 @@ val ktor_version: String by project
 val kotlin_version: String by project
 val logback_version: String by project
 
+buildscript {
+    repositories { jcenter() }
+
+    dependencies {
+        classpath("com.github.jengelman.gradle.plugins:shadow:2.0.4")
+    }
+}
+
 plugins {
     application
     kotlin("jvm") version "1.4.0"
+    id("com.github.johnrengelman.shadow") version "5.0.0"
 }
+
+
+//val mainClassName = application.mainClassName
+//tasks.withType<Jar> {
+//    manifest {
+//        attributes(
+//            mapOf(
+//                "Main-Class" to application.mainClassName
+//            )
+//        )
+//    }
+//}
 
 group = "com.ktorSample"
 version = "0.0.1"
@@ -43,3 +64,10 @@ kotlin.sourceSets["test"].kotlin.srcDirs("test")
 
 sourceSets["main"].resources.srcDirs("resources")
 sourceSets["test"].resources.srcDirs("testresources")
+
+
+//shadowJar {
+//    manifest {
+//        attributes "Main-Class": application.mainClassName
+//    }
+//}
