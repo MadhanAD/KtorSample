@@ -27,8 +27,13 @@ fun Application.module(testing: Boolean = false) {
     }
 
     routing {
+        route("/api") {
+            get("/") {
+                call.respondText("HELLO WORLD! from ktor project", contentType = ContentType.Text.Plain)
+            }
+        }
         get("/") {
-            call.respondText("HELLO WORLD! from ktor project", contentType = ContentType.Text.Plain)
+            call.respondText("HELLO WORLD! from ktor project via port:8090 ", contentType = ContentType.Text.Plain)
         }
     }
 }
