@@ -19,20 +19,8 @@ plugins {
     id("com.github.johnrengelman.shadow") version "5.0.0"
 }
 
-
-//val mainClassName = application.mainClassName
-//tasks.withType<Jar> {
-//    manifest {
-//        attributes(
-//            mapOf(
-//                "Main-Class" to application.mainClassName
-//            )
-//        )
-//    }
-//}
-
 group = "com.ktorSample"
-version = "0.0.2"
+version = "0.0.3"
 
 application {
     mainClassName = "io.ktor.server.netty.EngineMain"
@@ -64,10 +52,3 @@ kotlin.sourceSets["test"].kotlin.srcDirs("test")
 
 sourceSets["main"].resources.srcDirs("resources")
 sourceSets["test"].resources.srcDirs("testresources")
-
-
-//shadowJar {
-//    manifest {
-//        attributes "Main-Class": application.mainClassName
-//    }
-//}

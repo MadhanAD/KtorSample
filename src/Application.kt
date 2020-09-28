@@ -31,9 +31,16 @@ fun Application.module(testing: Boolean = false) {
             get("/") {
                 call.respondText("HELLO WORLD! from ktor project", contentType = ContentType.Text.Plain)
             }
+
+            get("/v1") {
+                call.respondText("HELLO WORLD! from ktor project from v1", contentType = ContentType.Text.Plain)
+            }
         }
         get("/") {
             call.respondText("HELLO WORLD! from ktor project via port:8090 ", contentType = ContentType.Text.Plain)
+        }
+        get("/v1") {
+            call.respondText("HELLO WORLD! from ktor project from v1 via post:8090", contentType = ContentType.Text.Plain)
         }
     }
 }
