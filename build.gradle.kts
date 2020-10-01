@@ -34,6 +34,7 @@ repositories {
 }
 
 dependencies {
+    val exposedVersion : String = "0.24.1"
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version")
     implementation("io.ktor:ktor-server-netty:$ktor_version")
     implementation("ch.qos.logback:logback-classic:$logback_version")
@@ -44,6 +45,17 @@ dependencies {
     implementation("io.ktor:ktor-client-core:$ktor_version")
     implementation("io.ktor:ktor-client-core-jvm:$ktor_version")
     implementation("io.ktor:ktor-client-apache:$ktor_version")
+
+//    implementation("org.jetbrains.exposed:exposed-core:$exposedVersion")
+//    implementation("org.jetbrains.exposed:exposed-dao:$exposedVersion")
+//    implementation("org.jetbrains.exposed:exposed-jdbc:$exposedVersion")
+
+    implementation("org.jetbrains.exposed", "exposed-core", exposedVersion)
+    implementation("org.jetbrains.exposed", "exposed-dao", exposedVersion)
+    implementation("org.jetbrains.exposed", "exposed-jdbc", exposedVersion)
+
+    implementation("mysql:mysql-connector-java:5.1.48")
+
     testImplementation("io.ktor:ktor-server-tests:$ktor_version")
 }
 
